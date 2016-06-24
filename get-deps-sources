@@ -1,0 +1,4 @@
+#!/bin/bash
+mvn dependency:sources
+mvn clean test install
+mvn eclipse:eclipse
