@@ -1,4 +1,4 @@
 #!/bin/bash
+lein pom
 mvn dependency:sources
-mvn clean test install
 mvn eclipse:eclipse
