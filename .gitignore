@@ -70,3 +70,9 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+## IntelliJ files
+*.iml
+*.ipr
+*.iws
+
