@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import junit.framework.TestCase;
 
@@ -32,8 +33,14 @@ public class ChromeDriverTest extends TestCase {
 		Properties props = new Properties();
 		try {
 			props.load(ChromeDriverTest.class.getResourceAsStream("/default.properties"));
+
 			System.setProperty("webdriver.chrome.driver", props.getProperty("webdriver.chrome.driver"));
-			driver = new ChromeDriver();
+
+			ChromeOptions options = new ChromeOptions();
+
+			options.addArguments("headless");
+
+			driver = new ChromeDriver(options);
 		} catch (IOException e) {
 			// TODO: handle this properly
 			e.printStackTrace();
